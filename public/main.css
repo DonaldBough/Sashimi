@@ -5,11 +5,29 @@
   color: #FFFFFF;
 }
 
+.container {
+  padding: 15px 25px 0 25px;
+  text-align: center;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.horizontalLine {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #BDBDBD; 
+   line-height: 0.1em;
+   margin: 60px 0 20px; 
+} 
+
+.horizontalLine span { 
+    background:#E1E1E1; 
+    padding:0 10px ; 
 }
 
 .navbar {

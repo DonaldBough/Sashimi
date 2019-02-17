@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
   </head>
@@ -24,20 +27,45 @@
         <span class="logo_text">Sashimi</span>
       </a>
     </nav>
+    <div class="container">
+      <h3 class="text-light"> Enter ingredients 🥢 </h3>
+      <!-- Ingredient list -->
+      <ul id="ingredientList" class="list-group">
+        <li>
+          <div id="ingredientListElement" class="input-group mb-3">
+            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+            <select class="custom-select" id="inputGroupSelect01">
+              <option value="g" selected>grams</option>
+              <option value="cup">cups</option>
+              <option value="tsp">tsp</option>
+              <option value="TBSP">TBSP</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+      <button style="margin-bottom: 20px;" onclick="addIngredient()" type="button" class="btn btn-warning">
+        Add Another
+      </button>
+      
+      <div class="horizontalLine text-muted"></div>
+      
+      <h3 class="text-light">For a grand total of: 🍱 </h3>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option value="g" selected>grams</option>
+          <option value="cup">cups</option>
+          <option value="tsp">tsp</option>
+          <option value="TBSP">TBSP</option>
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Sushi gif -->
     <img src="img/multiple_sushi.gif" width="200" height="150" class="center">
   </body>
-  <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    let config = {
-      apiKey: "AIzaSyDGI5ZkhE2YYMSi-mOFfeNDQRF6rpdz2Pc",
-      authDomain: "sashimi-f380a.firebaseapp.com",
-      databaseURL: "https://sashimi-f380a.firebaseio.com",
-      projectId: "sashimi-f380a",
-      storageBucket: "sashimi-f380a.appspot.com",
-      messagingSenderId: "652883400404"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+  <script src="main.js"></script>
 </html>
