@@ -9,11 +9,12 @@
   color: #FFFFFF;
 }
 
-.bottom_text {
+.logo_text_secondary {
+   font-family: 'Coiny', cursive;
 }
 
 .footer_text {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 12pt;
   font-family: 'Coiny', cursive;
   color: #FFFFFF;
