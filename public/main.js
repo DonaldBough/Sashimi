@@ -3,6 +3,8 @@
 let gramsInOneCup = 155;
 let tspInCup = 48;
 let tbspInCup = 16;
+let gramsInOneOunce = 28.3495;
+let ingredientCount = 0;
 
 function addIngredient() {
   let ingredientList = document.getElementById("ingredientList");
@@ -11,20 +13,21 @@ function addIngredient() {
 
   listElement.innerHTML = htmlString.trim();
   ingredientList.append(listElement);
+  incrementIngredientCount();
 }
 
 function showTotalWeight() {
   let unitToShowIn = document.getElementById("unitToShowInElement").value;
-  let totalWeight = getTotalWeight(unitToShowIn);
+  let totalWeight = getTotalWeightInGrams(unitToShowIn);
 
-  totalWeight = getConvertedValue(totalWeight, "grams", unitToShowIn);
+  totalWeight = getValueFromGramsToUnit(totalWeight, unitToShowIn);
   if (totalWeight == 0)
     document.getElementById("totalWeightElement").value = "Nothing yet..."
   else
-    document.getElementById("totalWeightElement").value = totalWeight;
+    document.getElementById("totalWeightElement").value = parseFloat(Math.round(totalWeight * 100) / 100).toFixed(0);
 }
 
-function getTotalWeight(unitToShowIn) {
+function getTotalWeightInGrams(unitToShowIn) {
   let totalWeight =  0;
   let inputGroups = getInputGroups();
 
@@ -41,6 +44,8 @@ function getWeightInGrams(weight, unit) {
   switch(unit) {
     case "grams":
       return weight;
+    case "ounces":
+      return weight * gramsInOneOunce;
     case "cups":
       return weight * gramsInOneCup;
     case "tsp":
@@ -52,10 +57,12 @@ function getWeightInGrams(weight, unit) {
   }
 }
 
-function getConvertedValue(weight, unit, unitToShowIn) {
+function getValueFromGramsToUnit(weight, unitToShowIn) {
   switch(unitToShowIn) {
     case "grams":
       return weight;
+    case "ounces":
+      return weight / gramsInOneOunce;
     case "cups":
       return weight /gramsInOneCup;
     case "tsp":
@@ -92,9 +99,10 @@ function getIngredientListElement() {
   `
     <li>
       <div id="ingredientListElement" class="input-group mb-3">
-        <input type="number" class="form-control">
+        <input type="tel" pattern="[0-9]*" class="form-control">
         <select class="custom-select" id="inputGroupSelect01">
           <option value="grams" selected>grams</option>
+          <option value="ounces">ounces</option>
           <option value="cups">cups</option>
           <option value="tsp">tsp</option>
           <option value="TBSP">TBSP</option>
@@ -103,6 +111,11 @@ function getIngredientListElement() {
     </li>
   `;
   return listElementString;
+}
+
+function incrementIngredientCount() {
+  let ingredientCountForm = document.getElementById("ingredientCountElement");
+  ingredientCountForm.textContent = (++ingredientCount) + " ingredients";
 }
 
 addIngredient();

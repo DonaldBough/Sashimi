@@ -35,8 +35,7 @@
    width: 100%; 
    text-align: center; 
    border-bottom: 1px solid #BDBDBD; 
-   line-height: 0.1em;
-   margin: 60px 0 20px; 
+   line-height: 0.1em; 
 } 
 
 .horizontalLine span { 
