@@ -9,6 +9,15 @@
   color: #FFFFFF;
 }
 
+.footer_text {
+  margin-top: 50px;
+  font-size: 12pt;
+  font-family: 'Coiny', cursive;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+
 .container {
   padding: 15px 25px 0 25px;
   text-align: center;

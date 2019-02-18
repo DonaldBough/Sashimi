@@ -32,17 +32,14 @@
       <!-- Ingredient list -->
       <ul id="ingredientList" class="list-group">
         <li>
-          <div id="ingredientListElement0" class="input-group mb-3">
+          <div id="ingredientListElement" class="input-group mb-3">
             <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
             <select class="custom-select" id="inputGroupSelect01">
-              <option value="g" selected>grams</option>
-              <option value="cup">cups</option>
+              <option value="grams" selected>grams</option>
+              <option value="cups">cups</option>
               <option value="tsp">tsp</option>
               <option value="TBSP">TBSP</option>
             </select>
-            <div class="input-group-append">
-              <button type="button" class="btn addButton">✓</button>
-            </div>
           </div>
         </li>
       </ul>
@@ -54,17 +51,21 @@
       
       <h3 class="text-light">For a grand total of: 🍱 </h3>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-        <select class="custom-select" id="inputGroupSelect02">
-          <option value="g" selected>grams</option>
-          <option value="cup">cups</option>
+        <input class="form-control" id="totalWeightElement" type="text" placeholder="Nothing yet..." readonly style="font-weight: bold;">
+        <select class="custom-select" id="unitToShowInElement">
+          <option value="grams" selected>grams</option>
+          <option value="cups">cups</option>
           <option value="tsp">tsp</option>
           <option value="TBSP">TBSP</option>
         </select>
       </div>
+      <button style="margin-bottom: 20px;" onclick="showTotalWeight()" type="button" class="btn btn-info">
+        Calculate
+      </button>
     </div>
     <!-- Sushi gif -->
     <img src="img/multiple_sushi.gif" width="200" height="150" class="center">
+    <div class="footer_text offset-3">Made with love for my bug ❤️️</div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
