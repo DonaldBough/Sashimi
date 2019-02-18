@@ -105,8 +105,4 @@ function getIngredientListElement() {
   return listElementString;
 }
 
-function addFooterConversions() {
-  
-}
-
 addIngredient();
