@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src="img/sashimi_transparent.png" width="90" height="63" class="d-inline-block align-top" style="margin-right: 30px;" alt="">
+        <img src="img/sashimi_transparent.png" width="70" height="49" class="d-inline-block align-top" style="margin-right: 30px;" alt="">
         <span class="logo_text">Sashimi</span>
       </a>
     </nav>
@@ -31,17 +31,6 @@
       <h3 class="text-light"> Enter ingredients 🥢 </h3>
       <!-- Ingredient list -->
       <ul id="ingredientList" class="list-group">
-        <li>
-          <div id="ingredientListElement" class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-            <select class="custom-select" id="inputGroupSelect01">
-              <option value="grams" selected>grams</option>
-              <option value="cups">cups</option>
-              <option value="tsp">tsp</option>
-              <option value="TBSP">TBSP</option>
-            </select>
-          </div>
-        </li>
       </ul>
       <button style="margin-bottom: 20px;" onclick="addIngredient()" type="button" class="btn btn-warning">
         Add Another
@@ -65,7 +54,10 @@
     </div>
     <!-- Sushi gif -->
     <img src="img/multiple_sushi.gif" width="200" height="150" class="center">
-    <div class="footer_text offset-3">Made with love for my bug ❤️️</div>
+    <div class="footer_text">
+      <div class="text-secondary">155 g -> cup, 3 g -> tsp, 10 grams -> tbsp</div>
+      Made with love for my bug ❤️️
+    </div>
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>

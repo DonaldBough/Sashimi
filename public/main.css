@@ -4,9 +4,14 @@
 
 .logo_text {
   margin-top: 50px;
-  font-size: 24pt;
+  font-size: 30pt;
   font-family: 'Coiny', cursive;
   color: #FFFFFF;
+}
+
+.bottom_text {
+  position: absolute;
+  bottom: 0;
 }
 
 .footer_text {
@@ -14,12 +19,10 @@
   font-size: 12pt;
   font-family: 'Coiny', cursive;
   color: #FFFFFF;
-  position: absolute;
-  bottom: 0;
 }
 
 .container {
-  padding: 15px 25px 0 25px;
+  padding: 15px 55px 0 55px;
   text-align: center;
 }
 

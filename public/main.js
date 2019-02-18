@@ -92,7 +92,7 @@ function getIngredientListElement() {
   `
     <li>
       <div id="ingredientListElement" class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+        <input type="number" class="form-control">
         <select class="custom-select" id="inputGroupSelect01">
           <option value="grams" selected>grams</option>
           <option value="cups">cups</option>
@@ -104,3 +104,9 @@ function getIngredientListElement() {
   `;
   return listElementString;
 }
+
+function addFooterConversions() {
+  
+}
+
+addIngredient();
