@@ -1,5 +1,5 @@
 'use strict'
-
+var totalWeightInGrams = 0;
 let gramsInOneCup = 155;
 let tspInCup = 48;
 let tbspInCup = 16;
@@ -19,12 +19,13 @@ function addIngredient() {
 function showTotalWeight() {
   let unitToShowIn = document.getElementById("unitToShowInElement").value;
   let totalWeight = getTotalWeightInGrams(unitToShowIn);
+  totalWeightInGrams = totalWeight;
 
   totalWeight = getValueFromGramsToUnit(totalWeight, unitToShowIn);
   if (totalWeight == 0)
     document.getElementById("totalWeightElement").value = "Nothing yet..."
   else
-    document.getElementById("totalWeightElement").value = parseFloat(Math.round(totalWeight * 100) / 100).toFixed(0);
+    document.getElementById("totalWeightElement").value = parseFloat(totalWeight).toFixed(2);
 }
 
 function getTotalWeightInGrams(unitToShowIn) {
@@ -38,23 +39,6 @@ function getTotalWeightInGrams(unitToShowIn) {
     totalWeight += getWeightInGrams(weight, unit);
   });
   return totalWeight;
-}
-
-function getWeightInGrams(weight, unit) {
-  switch(unit) {
-    case "grams":
-      return weight;
-    case "ounces":
-      return weight * gramsInOneOunce;
-    case "cups":
-      return weight * gramsInOneCup;
-    case "tsp":
-      return (weight /tspInCup) * gramsInOneCup;
-    case "TBSP":
-      return (weight /tbspInCup) * gramsInOneCup;
-    default:
-      return null;
-  }
 }
 
 function getValueFromGramsToUnit(weight, unitToShowIn) {
@@ -90,8 +74,8 @@ function getUnitFromGroup(group) {
 function getInputGroups() {
   let e = document.querySelectorAll(".input-group");
   let start = 0;
-  let endOfInputForms = e.length -1;
-  return [].slice.call(e, start, endOfInputForms); 
+  let endOfIngredientAddingForms = e.length - 4;
+  return [].slice.call(e, start, endOfIngredientAddingForms); 
 }
 
 function getIngredientListElement() {
@@ -99,7 +83,7 @@ function getIngredientListElement() {
   `
     <li>
       <div id="ingredientListElement" class="input-group mb-3">
-        <input type="tel" pattern="[0-9]*" class="form-control">
+        <input type="number" step="0.01" class="form-control">
         <select class="custom-select" id="inputGroupSelect01">
           <option value="grams" selected>grams</option>
           <option value="ounces">ounces</option>

@@ -43,11 +43,13 @@
         <span class="logo_text">Sashimi 生鱼片</span>
       </a>
     </nav>
+
     <div class="row" style="background: #DCEDC8">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary"> Enter ingredients 🥢 </h3>
         <!-- Ingredient list -->
         <ul id="ingredientList" class="list-group">
+          <!-- Populated from ingredientAdder.js -->
         </ul>
         <div id="ingredientCountElement" class="text-secondary logo_text_secondary" style="margin-bottom: 10px;"></div>
         <div>
@@ -60,10 +62,10 @@
             Calculate
           </button>
         </div>
-        
         <div class="horizontalLine text-muted" style="margin:30px 0 20px;"></div>
       </div>
     </div>
+
     <div class="row" style="background: #E1BEE7;">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary">For a grand total of 🍱 </h3>
@@ -79,6 +81,44 @@
         </div>
       </div>
     </div>
+
+    <div class="row" style="background: #ffb7c3">
+      <div class="container">
+        <h3 class="text-secondary logo_text_secondary"> Enter Total Calories 🍴</h3>
+        <div class="input-group mb-3">
+          <input class="form-control" id="totalCaloriesElement" type="text" style="font-weight: bold;">  
+          <input class="form-control" type="text" placeholder="calories" style="font-weight: bold;" readonly>  
+        </div>
+        <h3 class="text-secondary logo_text_secondary">Amount u-r eating? 🤔 </h3>
+        <div class="input-group mb-3">
+          <input type="number" step="0.01" class="form-control" id="portionWeightElement">
+          <select class="custom-select" id="portionUnitToShowIn">
+            <option value="grams" selected>grams</option>
+            <option value="ounces">ounces</option>
+            <option value="cups">cups</option>
+            <option value="tsp">tsp</option>
+            <option value="TBSP">TBSP</option>
+          </select>
+        </div>
+        <div>
+          <button style="margin-top: 20px;" onclick="showPortionAmount()" type="button" class="btn btn-info">
+            Calculate
+          </button>
+          <div class="horizontalLine text-muted" style="margin:30px 0 20px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="background: #E1BEE7;">
+      <div class="container">
+        <h3 class="text-secondary logo_text_secondary">That comes out to 🍣</h3>
+        <div class="input-group mb-3">
+          <input class="form-control" id="portionCaloriesElement" placeholder="Nothing yet..." type="text" style="font-weight: bold;">  
+          <input class="form-control" type="text" placeholder="calories" style="font-weight: bold;" readonly>  
+        </div>
+      </div>
+    </div>
+
     <!-- Sushi gif -->
     <img src="img/multiple_sushi.gif" width="200" height="150" class="center">
     <div class="footer_text">
@@ -88,5 +128,7 @@
   </body>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
-  <script src="main.js"></script>
+  <script src="foodTranslator.js"></script>
+  <script src="ingredientAdder.js"></script>
+  <script src="portionCalc.js"></script>
 </html>
