@@ -44,6 +44,7 @@
       </a>
     </nav>
 
+    <!-- Enter ingredients -->
     <div class="row" style="background: #DCEDC8">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary"> Enter ingredients 🥢 </h3>
@@ -66,11 +67,12 @@
       </div>
     </div>
 
+    <!-- For a grand total of -->
     <div class="row" style="background: #E1BEE7;">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary">For a grand total of 🍱 </h3>
         <div class="input-group mb-3">
-          <input class="form-control" id="totalWeightElement" type="text" placeholder="Nothing yet..." readonly style="font-weight: bold;">
+          <input class="form-control" id="totalWeightElement" maxlength="4" size="4" type="text" style="font-weight: bold;"><br>
           <select class="custom-select" id="unitToShowInElement">
             <option value="grams" selected>grams</option>
             <option value="ounces">ounces</option>
@@ -78,10 +80,17 @@
             <option value="tsp">tsp</option>
             <option value="TBSP">TBSP</option>
           </select>
+          <div class="input-group-append">
+            <button onclick="showTotalWeight()" type="button" class="btn btn-info">
+              Re-Calculate
+            </button>
+    <!-- <button class="btn btn-outline-secondary" type="button">Button</button> -->
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Enter total calories and amount u r eating -->
     <div class="row" style="background: #ffb7c3">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary"> Enter Total Calories 🍴</h3>
@@ -109,6 +118,7 @@
       </div>
     </div>
 
+    <!-- That comes out to -->
     <div class="row" style="background: #E1BEE7;">
       <div class="container">
         <h3 class="text-secondary logo_text_secondary">That comes out to 🍣</h3>
